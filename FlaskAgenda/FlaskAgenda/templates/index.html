@@ -2,32 +2,86 @@
 
 {% block content %}
 
-<div class="jumbotron">
-    <h1>Flask</h1>
-    <p class="lead">Flask is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://flask.pocoo.org/" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-</div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            Flask gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://flask.pocoo.org/docs/">Learn more &raquo;</a></p>
+
+<div class="container">
+    <div class=" row">
+        <div class="col md-12">
+            <h2>Phone List <button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#mymodal">Add Phone Number</button></h2>
+
+            <table class="table table-striped">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Number</th>
+                    <th>Type</th>
+                    <th>Actions</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>placeholder</td>
+                    <td>Doe</td>
+                    <td>placeDoe@asd.com</td>
+                    <td>1111111111</td>
+                    <td>home</td>
+                    <td>
+                        <a href="" class="btn btn_warning btn-xs" data-toggle="modal" data-target="#modaledit">Edit</a>
+                        <a href="" class="btn btn_danger btn-xs" onclick="return confirm('Are you sure')">Delete</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="mymodal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="model-content">
+                    <div class=" modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Insert Info</h4>
+                    </div>
+                    <form id="form">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="name" required="true">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword4">Last Name</label>
+                                <input type="text" class="form-control" id="lastname" placeholder="Last Name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Email" required=" true">
+                        </div>
+                        <div class="form-group">
+                            <label for="number">Phone</label>
+                            <input type="text" class="form-control" id="number" placeholder="Number">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="typep">Type</label>
+                                <select id="typep" class="form-control">
+                                    <option selected>Personal</option>
+                                    <option>Office</option>
+                                    <option>Home</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Submit</button>
+
+
+        </div>
+        
+        
+
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>The Python Package Index is a repository of software for the Python programming language.</p>
-        <p><a class="btn btn-default" href="https://pypi.python.org/pypi">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Microsoft Azure</h2>
-        <p>You can easily publish to Microsoft Azure using Visual Studio. Find out how you can host your application using a free trial today.</p>
-        <p><a class="btn btn-default" href="http://azure.microsoft.com">Learn more &raquo;</a></p>
-    </div>
+    
+    
+
+
 </div>
 
 {% endblock %}
